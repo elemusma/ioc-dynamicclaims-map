@@ -1,0 +1,189 @@
+<div id="map" style="height:550px;width:100%;background:red;"></div>
+
+<script>
+    function initMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+            // 43.42564548895474, -88.18134401131695
+            // 39.76366529116857, -102.72189677330579
+            center: { lat: 39.76366529116857, lng: -102.72189677330579 },
+            zoom: 4.5,
+        });
+
+        const markers = [
+            {
+                position: { lat: 33.519679936817624, lng: -86.81581921330061 },
+                // label: "1",
+                // color: "green",
+                title: "Birmingham, AL",
+                description: "35226",
+                // link: "https://goo.gl/maps/RXsrpaTuu6nKk6weA?coh=178573&entry=tt"
+            },
+            {
+                position: { lat: 33.45272129473674, lng: -112.06468438163023 },
+                // label: "5",
+                // color: "green",
+                title: "Phoenix, AZ",
+                description: "85006",
+                // link: "https://goo.gl/maps/ZDpgBxgWWrh6cYnh9?coh=178573&entry=tt"
+            },
+            {
+                position: { lat: 32.25631548524388, lng: -110.96965046903364 },
+                // label: "10",
+                // color: "green",
+                title: "Tucson, AZ",
+                description: "85712",
+                // link: "https://goo.gl/maps/h47QB5oZycwdv2kX8?coh=178573&entry=tt"
+            },
+            {
+                position: { lat: 36.06328821915899, lng: -94.1574765997318 },
+                // label: "2",
+                // color: "green",
+                title: "Fayetteville, AR",
+                description: "72703",
+                // link: "https://goo.gl/maps/wVhXeE2y49yhfN6L7?coh=178573&entry=tt"
+            },
+            {
+                position: { lat: 34.74846614496087, lng: -92.29425094609786 },
+                // label: "6",
+                // color: "green",
+                title: "Little Rock, AR",
+                description: "72114",
+                // link: "https://goo.gl/maps/98HL21MbRuXFvYmX8?coh=178573&entry=tt"
+            },
+            {
+                position: { lat: 43.17789799279878, lng: -88.08771050353998 },
+                // label: "11",
+                // color: "green",
+                title: "Bakersfield, CA",
+                description: "93313",
+                // link: "https://goo.gl/maps/M3d39vaQy3xA2yLn8?coh=178573&entry=tt"
+            },
+            {
+                position: { lat: 43.05913867152742, lng: -88.15447587572396 },
+                // label: "3",
+                // color: "green",
+                title: "Irvine, CA",
+                description: "92606",
+                // link: "https://goo.gl/maps/hP5PRfVNo5EVEixa7?coh=178573&entry=tt"
+            }, {
+                position: { lat: 43.256766000318635, lng: -87.92618860322683 },
+                // label: "7",
+                // color: "green",
+                title: "Los Angeles, CA",
+                description: "90012",
+                // link: "https://goo.gl/maps/NQjmc5RyJ1sAbehf7?coh=178573&entry=tt"
+            },
+            {
+                position: { lat: 42.955747059077254, lng: -88.0088555572109 },
+                // label: "12",
+                // color: "green",
+                title: "Riverside, CA",
+                description: "92506",
+                // link: "https://goo.gl/maps/VqUTGxvAfREcF21F8?coh=178573&entry=tt"
+            },
+            {
+                position: { lat: 43.07455939758491, lng: -87.97655866090837 },
+                // label: "4",
+                // color: "green",
+                title: "Sacramento, CA",
+                description: "91814",
+                // link: "https://goo.gl/maps/x2it5MbxFSvJvZnu8?coh=178573&entry=tt"
+            },
+            {
+                position: { lat: 44.248953315687636, lng: -88.40310358359731 },
+                // label: "8",
+                // color: "green",
+                title: "San Bernardino, CA",
+                description: "92401",
+                // link: "https://goo.gl/maps/SpYanF7CxdrfeukU8?coh=178573&entry=tt"
+            },
+            {
+                position: { lat: 42.98926816194466, lng: -88.26842555906101 },
+                // label: "13",
+                // color: "green",
+                title: "San Diego, CA",
+                description: "92101",
+                // link: "https://goo.gl/maps/3mJ4WF3WCiWPXNK4A?coh=178573&entry=tt"
+            },
+            {
+                position: { lat: 44.013423007365844, lng: -88.60017605715485 },
+                // label: "9",
+                // color: "green",
+                title: "San Francisco, CA",
+                description: "94103",
+                // link: "https://goo.gl/maps/ViE5iYPVyJkMcDUbA?coh=178573&entry=tt"
+            },
+
+            // start of urgent cares
+            {
+                position: { lat: 43.03290418287602, lng: -88.04835170886348 },
+                // label: "A",
+                // color: "yellow",
+                title: "San Jose, CA",
+                description: "95112",
+                // link: "https://goo.gl/maps/YTofFyjCGtHacaRx5?coh=178573&entry=tt"
+            },
+            {
+                position: { lat: 43.097428531800595, lng: -87.91123211857914 },
+                // label: "B",
+                // color: "yellow",
+                title: "Santa Barbara, CA",
+                description: "93101",
+                // link: "https://goo.gl/maps/sUv8H3Sq1xVYHzvU6?coh=178573&entry=tt"
+            },
+            {
+                position: { lat: 43.320891963217214, lng: -87.93707211671551 },
+                label: "C",
+                color: "yellow",
+                title: "Ascension Grafton Urgent Care",
+                description: "2061 Cheyenne Court Grafton, WI 53024",
+                link: "https://goo.gl/maps/QgHbmqyuLeHcAuBB6?coh=178573&entry=tt"
+            },
+            {
+                position: { lat: 42.73094487352876, lng: -87.82869181674646 },
+                label: "D",
+                color: "yellow",
+                title: "Ascension All Saints Urgent Care",
+                description: "3807 Spring St, Racine, WI 53405",
+                link: "https://goo.gl/maps/QgHbmqyuLeHcAuBB6?coh=178573&entry=tt"
+            },
+
+            // start of wound clinic
+
+            {
+                position: { lat: 44.248653591237364, lng: -88.40269588783012 },
+                label: "D",
+                color: "red",
+                title: "Ascension St. Elizabeth Hospital",
+                description: "1506 S. Oneida Street Appleton, WI 54915",
+                link: "https://goo.gl/maps/T6mdewYcZaQoqqBd9?coh=178573&entry=tt"
+            },
+
+        ];
+
+        markers.forEach((marker) => {
+            const markerOptions = {
+                position: marker.position,
+                map: map,
+                // label: marker.label,
+                // icon: {
+                //   path: google.maps.SymbolPath.CIRCLE,
+                //   fillColor: marker.color,
+                //   fillOpacity: 1,
+                //   strokeWeight: 0,
+                //   scale: 12,
+                // },
+            };
+            const markerObject = new google.maps.Marker(markerOptions);
+            const infoWindow = new google.maps.InfoWindow({
+                content: `<div><h3>${marker.title}</h3><p>${marker.description}</p></div>`,
+                // content: `<div><h3>${marker.title}</h3><p>${marker.description}</p><a href="${marker.link}" target="_blank" class="bold">Get directions</a></div>`,
+            });
+            markerObject.addListener("click", () => {
+                infoWindow.open(map, markerObject);
+            });
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPZx8ycAKpSOd9XFcZLR7d2Pfi9Er_0VM&callback=initMap" async
+    defer></script>
